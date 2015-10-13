@@ -1,0 +1,21 @@
+<div class="row" ng-repeat="song in songs">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title black-text">{{ song.name }}</span>
+                <p>
+                    <ul>
+                        <li ng-repeat="album in song.albums">
+                            <a href="#/album/{{ album.id }}">
+                                {{ album.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#/song/{{ song.id }}">View</a>
+            </div>
+        </div>
+    </div>
+</div>

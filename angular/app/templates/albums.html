@@ -1,0 +1,21 @@
+<div class="row" ng-repeat="album in albums">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title black-text">{{ album.name }} <i>{{ album.year }}</i></span>
+                <p>
+                    <ul>
+                        <li ng-repeat="song in album.songs">
+                            <a href="#/song/{{ song.id }}">
+                                {{ song.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#/album/{{ album.id }}">View</a>
+            </div>
+        </div>
+    </div>
+</div>

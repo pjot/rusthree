@@ -1,0 +1,18 @@
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: false
+
+handlers:
+- url: /api/.*
+  script: rusthree.app
+- url: (.*)/
+  static_files: angular/app\1/index.html
+  upload: angular/app
+- url: (.*)
+  static_files: angular/app\1
+  upload: angular/app
+
+libraries:
+- name: webapp2
+  version: latest
